@@ -3,9 +3,9 @@ public class Main {
     public static void main(String[] args) {
         // variables locales
         Persona per1, per2, per3, per4;
-        Libro li1, li2, li3, li4;
+        Libro b1, b2, b3, b4;
         Rectangulo r1, r2, r3, r4;
-        Scanner leer = new Scanner(System.in);
+        Scanner read = new Scanner(System.in);
         int act;
 
         // coordinando programas
@@ -15,7 +15,7 @@ public class Main {
         System.out.println("3 - Rectangulo");
         System.out.println("0 - Salir");
         System.out.print("Elegir accion: ");
-        act = leer.nextInt();
+        act = read.nextInt();
         do{
             System.out.println();
             switch (act){
@@ -24,47 +24,47 @@ public class Main {
                     per2 = new Persona("Gerardo", 19, "Masculino");
                     per3 = new Persona("Luisa", 21, "Femenino");
                     per4 = new Persona("Jessica", 25, "Femenino");
-                    per1.Mostrar();
-                    per2.Mostrar();
-                    per3.Mostrar();
-                    per4.Mostrar();
+                    per1.Show();
+                    per2.Show();
+                    per3.Show();
+                    per4.Show();
                     break;
                 case 2: // codigo Libro
-                    li1 = new Libro();
-                    li1.Mostrar();
+                    b1 = new Libro();
+                    b1.Show();
                     // creando otros libros
-                    li2 = new Libro();
-                    li3 = new Libro();
-                    li4 = new Libro();
+                    b2 = new Libro();
+                    b3 = new Libro();
+                    b4 = new Libro();
                     // modificando atributos
-                    li2.titulo = "Bajo la misma estrella";
-                    li2.autor = "John Green";
-                    li2.aPub = "2019";
-                    li3.titulo = "La brujula dorada";
-                    li3.autor = "Philip Pullman";
-                    li3.aPub = "2007";
-                    li4.titulo = "Guerra y Paz";
-                    li4.autor = "León Tolstói";
-                    li4.aPub = "1864";
+                    b2.title = "Bajo la misma estrella";
+                    b2.author = "John Green";
+                    b2.yearPub = "2019";
+                    b3.title = "La brujula dorada";
+                    b3.author = "Philip Pullman";
+                    b3.yearPub = "2007";
+                    b4.title = "Guerra y Paz";
+                    b4.author = "León Tolstói";
+                    b4.yearPub = "1864";
                     // mostrar
-                    li2.Mostrar();
-                    li3.Mostrar();
-                    li4.Mostrar();
+                    b2.Show();
+                    b3.Show();
+                    b4.Show();
                     break;
                 case 3:
                     // codigo Rectangulo
                     r1 = new Rectangulo(15, 3);
                     r1.Area();
-                    r1.Perimetro();
+                    r1.Perimeter();
                     r2 = new Rectangulo(3, 7);
                     r2.Area();
-                    r2.Perimetro();
+                    r2.Perimeter();
                     r3 = new Rectangulo(2.5f, 11.3f);
                     r3.Area();
-                    r3.Perimetro();
+                    r3.Perimeter();
                     r4 = new Rectangulo(17.5f, 24);
                     r4.Area();
-                    r4.Perimetro();
+                    r4.Perimeter();
                     break;
                 default:
             }
@@ -74,7 +74,7 @@ public class Main {
             System.out.println("3 - Rectangulo");
             System.out.println("0 - Salir");
             System.out.print("Elegir accion: ");
-            act = leer.nextInt();
+            act = read.nextInt();
         }while(act != 0);
     }
 }

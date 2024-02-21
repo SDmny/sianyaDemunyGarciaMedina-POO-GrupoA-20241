@@ -10,7 +10,7 @@ public class Persona {
         this.gender = gender;
     }
     // metodos
-    public void Mostrar(){
+    public void Show(){
         System.out.println("Nombre: "+name);
         System.out.println("Edad: "+age);
         System.out.println("Genero: "+gender);

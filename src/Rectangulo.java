@@ -1,19 +1,19 @@
 public class Rectangulo {
     // atributos
-    private float ancho;
-    private float altura;
+    private float width;
+    private float height;
     // constructor
-    public Rectangulo(float ancho, float altura){
-        this.ancho = ancho;
-        this.altura = altura;
+    public Rectangulo(float width, float height){
+        this.width = width;
+        this.height = height;
     }
     // metodos
     public void Area(){
-        float area = ancho*altura;
+        float area = width*height;
         System.out.println("Area: "+area);
     }
-    public void Perimetro(){
-        float perimetro = (ancho*2)+(altura*2);
+    public void Perimeter(){
+        float perimetro = (width*2)+(height*2);
         System.out.println("Perimetro: "+perimetro);
         System.out.println();
     }
