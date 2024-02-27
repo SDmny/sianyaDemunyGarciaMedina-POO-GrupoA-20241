@@ -11,19 +11,18 @@ public class Main {
             System.out.println();
             switch (act){
                 case 1: // Rectangulo
-                    Rectangulo.areaPerimeter(31, 15);
-                    Rectangulo.areaPerimeter(4.23, 3.45);
+                    Rectangulo.askNumber();
                     break;
                 case 2: // Empleado
-                    System.out.println("Salario: "+Empleado.calcularSalario(750));
-                    System.out.println("Salario: "+Empleado.calcularSalario(1200.5, 67));
-                    System.out.println("Salario: "+Empleado.calcularSalario(820, 150.5, 7));
+                    System.out.println("Salario: "+Empleado.calculateSalary(750));
+                    System.out.println("Salario: "+Empleado.calculateSalary(1200.5, 67));
+                    System.out.println("Salario: "+Empleado.calculateSalary(820, 150.5, 7));
                     break;
                 case 3: // CalculadoraImpuestos
-                    System.out.printf("\nImpuestos: %.2f", CalculadoraImpuestos.calcularImpuestos(7500));
-                    System.out.printf("\nImpuestos: %.2f", CalculadoraImpuestos.calcularImpuestos(12500, 75));
-                    System.out.printf("\nImpuestos: %.2f", CalculadoraImpuestos.calcularImpuestos(50, 7500, 5000));
-                    System.out.printf("\nImpuestos: %.2f", CalculadoraImpuestos.calcularImpuestos(50, 7500, 500));
+                    System.out.printf("\nImpuestos: %.2f", CalculadoraImpuestos.calculateTaxes(7500));
+                    System.out.printf("\nImpuestos: %.2f", CalculadoraImpuestos.calculateTaxes(12500, 75));
+                    System.out.printf("\nImpuestos: %.2f", CalculadoraImpuestos.calculateTaxes(50, 7500, 5000));
+                    System.out.printf("\nImpuestos: %.2f", CalculadoraImpuestos.calculateTaxes(50, 7500, 500));
                     System.out.println();
                     break;
                 default:
