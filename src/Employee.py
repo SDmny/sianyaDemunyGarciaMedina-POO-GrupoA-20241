@@ -92,6 +92,7 @@ class Employee:
         print(f"Numero de cuenta: ")
         account = self.setNumberAccount()
         print("Tipo de cuenta: ")
+
         type = self.setType()
         employee = Employee(name, lastName, account, type)
         Employee.employeeArray.append(employee)
