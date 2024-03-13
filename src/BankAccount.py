@@ -1,3 +1,4 @@
+from Bank import Bank
 class BankAccount:
     accountNumber=0
     amount=0
@@ -6,6 +7,7 @@ class BankAccount:
     def __init__(self, accountNumber, type):
         self.accountNumber = accountNumber
         self.type = type
+        
 
     def getAccountNumber(self) :
         return self.accountNumber
