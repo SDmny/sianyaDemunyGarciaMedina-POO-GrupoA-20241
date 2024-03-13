@@ -2,7 +2,7 @@ from Bank import Bank
 from BankAccount import BankAccount
 class Employee:
 
-    employeeArray = []
+    
 
     __name = ""
     __lastName = ""
@@ -15,6 +15,7 @@ class Employee:
         self.__account = BankAccount(accountNumber, type)
         Employee.__accountsArray.append(self.account)
         Bank.accounts.append(self.account)
+        self.employeeArray = []
 
 
     def get_name(self):
@@ -31,7 +32,7 @@ class Employee:
 
 
     def setType(self):
-        type = input()
+        self.type = input()
         if type != 'A' and type != 'B' and type != 'C':
             print(f"Tipo de cuenta no valido")
             print(f"tipo de cuenta: ")
@@ -39,7 +40,7 @@ class Employee:
         return self.type
 
     def setNumberAccount(self):
-        number = input()
+        number = int(input())
         if number<=0:
             print("Numero invalido")
             print("Numero de cuenta: ")
@@ -56,7 +57,7 @@ class Employee:
             print(f"Tipo de cuenta: ")
             type = self.setType()
             account = BankAccount(accountNumber, type)
-            Employee.employeeArray.append(account)
+            Employee.self.employeeArray.append(account)
             Bank.accounts.append(account)
             print(f"Cuenta agregada")
         else:
@@ -65,20 +66,20 @@ class Employee:
 
     def createEmployee(self):
         print(f"Usuario con cuenta: 1 - Sí / 2 - No")
-        aux = input()
+        aux = int(input())
         if aux==2:
             print(f"Nombre: ")
             name = input()
             print(f"Apellido: ")
             lastName = input()
             employee = Employee(name, lastName)
-            Employee.employeeArray.append(employee)
+            Employee.self.employeeArray.append(employee)
             print(f"Empleado agregado")
-            self.seeEmployee(Employee.employeeArray.get(Employee.employeeArray.size()-1))
+            self.seeEmployee(Employee.self.employeeArray.get(Employee.self.employeeArray.size() -1))
         
         elif (aux == 1):
             self.createEmployeeAndAcount()
-            self.seeEmployee(Employee.employeeArray.get(Employee.employeeArray.size()-1))
+            self.seeEmployee(Employee.self.employeeArray.get(Employee.self.employeeArray.size() -1))
         
         else:
             print(f"Opcion inexistente")
@@ -90,26 +91,32 @@ class Employee:
         print(f"Apellido: ")
         lastName = input()
         print(f"Numero de cuenta: ")
-        account = self.setNumberAccount()
+        self.account = self.setNumberAccount()
         print("Tipo de cuenta: ")
 
         type = self.setType()
-        employee = Employee(name, lastName, account, type)
-        Employee.employeeArray.append(employee)
+        employee = Employee(name, lastName, self.account, self.type)
+        Employee.self.employeeArray.append(employee)
         print(f"Empleado agregado")
         
 
     def seeEmployees(self):
         numId=1;
-        employeeIterator = Employee.employeeArray.iterator()
+        employeeIterator = Employee.self.employeeArray.iterator()
         print(f"Lista de empleados")
+        
         while (employeeIterator.hasNext()):
+            
             employee = employeeIterator.next()
+            
             if (employee.accountsArray.size() == 1): 
                 print(f""+numId+" - Empleado: "+employee.getName()+"Numero de cuenta: "+employee.getAccount().getAccountNumber()+"Saldo: "+employee.getAccount().getAmount()+"Tipo de cuenta: "+employee.getAccount().getType())
+            
             else :
                 print(f""+numId+" - Empleado: "+employee.getName()+"Cantidad de cuentas: "+employee.accountsArray.size())
+            
             numId = numId+1
+        
         print(f"")
     
     def seeEmployee(self, employee):
