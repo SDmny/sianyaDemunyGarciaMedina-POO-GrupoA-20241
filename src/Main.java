@@ -10,20 +10,20 @@ public class Main {
         while (action!=0) {
             switch (action){
                 case 1: // Crear empleado
-                    Employee.createEmployee();
+                    Bank.createEmployee();
                     break;
                 case 2: // Crear cuenta
-                    Employee.addAccount();
+                    Bank.addAccount();
                     break;
                 case 3: // Ver empleado
                     System.out.println("Ingrese numero de empleado (Visible en opción 4 - Ingrese 0 para cancelar)");
                     aux = scanner.nextInt();
                     if(aux > 0){
-                        Employee.seeEmployee(Employee.employeeArray.get(aux-1));
+                        Bank.seeEmployee(Employee.employeeArray.get(aux-1));
                     }
                     break;
                 case 4: // Ver lista de empleados
-                    Employee.seeEmployees();
+                    Bank.seeEmployees();
                     break;
                 case 5: // Ver cuenta
                     System.out.println("Ingrese numero de cuenta (Visible en opción 6 - Ingrese 0 para cancelar)");
