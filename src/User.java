@@ -1,17 +1,18 @@
 import java.util.ArrayList;
-
+import java.util.Scanner;
 public class User {
+    // Variables globales
+    static Scanner scanner = new Scanner(System.in);
     // Atributos
-    public static ArrayList<Book> booksUser = new ArrayList<>();
-    private int id=0, age=0;
-    private String name="";
+    private ArrayList<Book> booksUser = new ArrayList<>();
+    private int id, age;
+    private String name;
 
     // Constructor
     public User(String name, int age){
-        this.id = id+1;
         this.name = name;
         this.age = age;
-        id++;
+        id = Library.users.size()+1;
     }
     // Getters y Setters
     public int getAge() {
@@ -25,5 +26,28 @@ public class User {
     }
     public void setName(String name) {
         this.name = name;
+    }
+    public int getId() {
+        return id;
+    }
+    public ArrayList<Book> getBooksUser() {
+        return booksUser;
+    }
+
+    // Metodos
+    public static void createUser(){
+        String name;
+        int age;
+        System.out.println("\nRegistrar usuario");
+        System.out.print("Nombre: ");
+        name = scanner.next();
+        System.out.print("Edad: ");
+        age = scanner.nextInt();
+        User user = new User(name, age);
+        Library.addUser(user);
+    }
+
+    public static void rentBook(){
+
     }
 }
