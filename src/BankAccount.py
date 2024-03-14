@@ -1,68 +1,67 @@
-from Bank import Bank
 class BankAccount:
-    accountNumber=0
+    account_number=0
     amount=0
-    type = ''
+    type = ""
 
-    def __init__(self, accountNumber, type):
-        self.accountNumber = accountNumber
+    def __init__(self, account_number, type):
+        self.account_number = account_number
         self.type = type
         
 
-    def getAccountNumber(self) :
-        return self.accountNumber
+    def get_account_number(self) :
+        return self.account_number
     
-    def getType(self) :
+    def get_type(self) :
         return self.type
     
-    def getAmount(self) :
+    def get_amount(self) :
         return self.amount
 
-    def addAmount(self, amount) :
+    def add_amount(self, amount) :
         if (type == 'A'):
-            self.addAmountA(amount)
+            self.add_amountA(amount)
         elif (type == 'B'):
-            self.addAmountB(amount)
+            self.add_amountB(amount)
         else:
             self.amount += amount;
-        print(f"Saldo actual: " + self.getAmount())
+        print(f"Saldo actual:   {self.get_amount()}")
     
-    def addAmountA(self, amount) :
+    def add_amountA(self, amount) :
         if (self.amount + amount <= 50000):
             self.amount += amount
         else:
-            print(f"Límite de 50,000 para cuenta A alcanzado")
+            print("Límite de 50,000 para cuenta A alcanzado")
         
     
-    def addAmountB(self, amount) :
+    def add_amountB(self, amount) :
         if (self.amount + amount <= 100000):
             self.amount += amount
         else:
-            print(f"Límite de 100,000 para cuenta B alcanzado")
+            print("Límite de 100,000 para cuenta B alcanzado")
         
     
-    def substractAmount(self, amount) :
+    def substract_amount(self, amount) :
         if (type == 'A'):
-            self.substractAmountA(amount)
+            self.substract_amountA(amount)
         elif (type == 'B'):
-            self.substractAmountB(amount)
+            self.substract_amountB(amount)
         elif((self.amount-amount) >= 10000):
             self.amount -= amount;
         else :
-            print(f"Cantidad minima de 10,000 requerida para cuenta tipo C")
-        print(f"Saldo actual: " + self.getAmount())
+            print("Cantidad minima de 10,000 requerida para cuenta tipo C")
+        print(f"Saldo actual:  {self.get_amount()}")
     
-    def substractAmountA(self, amount) :
+    def substract_amountA(self, amount) :
         if (self.amount - amount >= 1000):
             self.amount -= amount
         else:
-            print(f"Cantidad minima de 1,000 requerida para cuenta tipo A")
+            print("Cantidad minima de 1,000 requerida para cuenta tipo A")
         
     
-    def substractAmountB(self, amount) :
+    def substract_amountB(self, amount) :
         if (self.amount - amount >= 5000):
             self.amount -= amount
         else:
-            print(f"Cantidad minima de 5,000 requerida para cuenta tipo B")
+            print("Cantidad minima de 5,000 requerida para cuenta tipo B")
         
     

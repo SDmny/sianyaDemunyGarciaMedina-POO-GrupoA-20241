@@ -1,32 +1,29 @@
-from Bank import Bank
 from BankAccount import BankAccount
 class Employee:
 
-    __name = ""
-    __lastName = ""
-    __account = 0
+    employee_array = []
+
+    name = ""
+    last_name = ""
+    account = 0
+    accounts_array = []
+
+    def __init__(self, name, last_name, account_number, type):
+        self.name = name
+        self.last_name = last_name
+        self.account = BankAccount(account_number, type)
+        self.accounts_array.append(self.account)
     
-
-    def __init__(self, name, lastName, accountNumber, type):
-        self.__name = name
-        self.__lastName = lastName
-        self.__account = BankAccount(accountNumber, type)
-        accountsArray = []
-        accountsArray.append(self.account)
-        Bank.accounts.append(self.account)
-        Bank.employeeArray = []
-
-
     def get_name(self):
-        return self.__name
+        return self.name
     
-    def set_name(self, name):
-        self.__name = name
-        
-    def get_lastName(self):
-        return self.__lastName
+    def get_last_name(self):
+        return self.last_name
 
     def get_account(self):
-        return self.__account
+        return self.account
+    
+    def get_accounts_array(self):
+        return self.accounts_array
     
 
